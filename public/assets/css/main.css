@@ -1,0 +1,373 @@
+
+/*This is CSS for additional forms which were given in the example iamge*/
+.input-control{
+  display: grid;
+  grid-template-columns: 6rem 10rem;
+  align-items: center;
+  margin-top: 0.1rem;
+  border-radius: 5px;
+  
+}
+
+.input-control label{
+  width: 5rem;
+}
+
+.input-control input{
+  float: left;
+  border: 2px solid black;
+
+}
+
+.input-control.success input {
+    border-color: black;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    margin-top: 5px;
+    grid-column-start: 2;
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
+
+.typeSwitcherSection{
+  display: flex;
+  align-items: center;
+  padding: 1rem 0vw 1rem 0vw;
+  gap: 1rem;
+}
+
+#selectError{
+  display: none;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  font-size: 18px;
+  color: white;
+  background-color: red;
+}
+
+#selectError:hover ~ #selectErrorMessage{
+  display: flex;
+}
+
+#selectErrorMessage{
+  display: none;
+  height: 20px;
+  width: 15rem;
+  border-radius: 10px;
+  pointer-events: none;
+  margin-left: -35px;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  background-color: red;
+  color: white;
+}
+
+/* This CSS is made for Type Switcher element*/
+#productType{
+  border: 2px solid black;
+  border-radius: 3px; 
+  height: 26px;
+  /* commands to remove default drop down arrow */
+  -webkit-appearance: none; /* remove for webkit browsers */
+  -moz-appearance: none; /* remove for firefox */
+  appearance: none; /* modern browsers */
+  width: 100%;
+  text-indent: 0.2em;
+}
+
+/* Wrappers are created to add costume drop down arrow as browser's original arrow is different than one given in the task.*/
+#wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 7rem; /* real length of dropdown */
+}
+
+#wrapper:after {
+  content: "🢓";
+  border-left: 2px solid black;
+  pointer-events: none; 
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0.2rem;
+  padding-top: 0.3rem;
+}
+
+/* CSS Below is to display form with id DVD */
+#DVD{
+  display: none;
+  grid-template-rows: 5rem 1rem;
+  width: 19rem;
+  height: auto;
+  border: 2px solid black;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  margin-bottom: 5rem;
+  border-radius: 2px;
+}
+
+
+#descriptionsize{
+  grid-column-start: span 2;
+  font-size: smaller;
+}
+
+/* CSS Below is to display form with id Furniture */
+#Furniture{
+  display: none;
+  flex-direction: column;
+  align-items: left;
+  width: 20rem;
+  height: 12rem;
+  padding-top: 1rem;
+  border: 2px solid black;  
+  padding-bottom: 0.5rem;
+  margin-bottom: 5rem;
+  padding-left: 2rem;
+}  
+
+ #descriptionfurniture{
+ align-items: left;
+ align-items: left;
+ font-size: smaller;
+}
+
+/* CSS Below is to display form with id Book */
+#Book{
+  display: none;
+  margin-top: 0.75rem;
+  grid-template-columns: 7rem 11.25rem;
+  grid-template-rows: 2.5rem 2.5rem;
+  width: 20.5rem;
+  height: auto;
+  border: 2px solid black;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3.5rem;
+  border-radius: 2px;
+  margin-bottom: 5rem;
+}
+
+.bookSpecs{
+   border: 2px solid black;
+}
+
+#descriptionbook{
+  grid-column-start: span 2;
+ font-size: smaller;
+}
+
+
+
+#linebottom{
+  border-top: 2px solid black;
+  margin-bottom: 3rem;
+  margin: auto;
+  bottom: 0;
+  width: 95%;
+}
+ 
+
+body {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 0vh;
+  font-family: 'Helvetica'
+  }
+
+.container {
+  font-size: 10px;
+  font-family:  Helvetica;
+  margin:auto; 
+  background: white; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 40px;
+  margin-bottom: 45px; 
+}
+    
+
+.header {
+  display: flex;
+  grid-template-columns: auto auto auto;
+  font-size: 1.2rem;
+  align-items: center; 
+  margin-bottom: -1vw;  
+  justify-content: space-between;
+}
+ 
+
+
+.item{
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.buttons {
+  padding-left: 43%;
+  grid-column-gap: 10px;
+  background-color: white;   
+}
+
+.line{
+  width: 100%;
+  margin: auto; 
+  border-bottom: 2px solid;
+  margin-bottom: 1rem; 
+}
+
+.prodDescription{
+  display:flex; 
+  text-align: center;
+  justify-content: center;
+  font-size: 15px; 
+}
+
+.delete-checkbox{
+  margin-top: 15px; 
+  margin-left: 10px; 
+}
+
+#productaddtext{
+  width: auto;  
+}
+
+#submit{
+  margin-right: 20px; 
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 4px;
+  background-color: white; 
+  box-shadow: 1.5px 1.5px 0px black;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: rgb(243,243,243);
+  transition: background-color 0.1s;
+}
+
+#submit:active{     
+  background-color:rgb(180,180,180);    
+}
+
+
+#addProduct{
+  margin-right: 20px; 
+  font-size: 18px;
+  /* color: black ;  */
+  border: 3px solid black;
+  border-radius: 4px;
+  background-color: white; 
+  /* text-decoration: none; */
+  padding: 0px 10px;
+  box-shadow: 1.5px 1.5px 0px black;
+  cursor: pointer;
+}
+
+#addProduct:hover {
+  background-color: rgb(243,243,243);
+  transition: background-color 0.1s;
+}
+
+#addProduct:active{     
+  background-color:rgb(180,180,180);  
+}
+
+#massDelete{
+  margin-right: 20px; 
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 4px;
+  background-color: white; 
+  padding: 0px 10px;
+  box-shadow: 1.5px 1.5px 0px black;
+  cursor: pointer;
+}
+
+#massDelete:hover {
+  background-color: rgb(243,243,243);
+  transition: background-color 0.1s;
+}
+
+#massDelete:active{     
+  background-color:rgb(180,180,180);  
+}
+
+#save{
+  font-size: 0.8rem;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: white; 
+  box-shadow: 1.5px 1.5px 0px black;
+  cursor: pointer;
+
+}
+
+#save:hover {
+  background-color: rgb(243,243,243);
+  transition: background-color 0.1s;
+}
+
+#save:active{     
+  background-color:rgb(180,180,180);    
+}
+
+#cancel{
+  font-size: 0.8rem;
+  border: 2px solid black;
+  color: black ;
+  border-radius: 4px;
+  background-color: white; 
+  box-shadow: 1.5px 1.5px 0px black;
+  text-decoration: none;
+  padding: 1px 8px;
+  cursor: pointer;
+  margin-left: 0.8rem;
+}
+
+#cancel:hover {
+  background-color: rgb(243,243,243);
+  transition: background-color 0.1s;
+}
+
+#cancel:active{     
+  background-color:rgb(180,180,180);  
+}
+
+
+
+#size{
+  border: 2px solid black;
+}
+
+
+
+.footer{
+  position: fixed;
+  height: 35px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+ 
