@@ -185,7 +185,7 @@ function addProducts() {
   // console.log( JSON.stringify(calledFunc));
 
   $.ajax({
-      url:"/?page=product_create&action=create",
+      url:"./?page=product_create&action=create",
       method:"post", 
       data: {
               prodInfo  : JSON.stringify(prodInfo),

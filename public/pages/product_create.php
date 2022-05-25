@@ -92,4 +92,4 @@
   <div class="footer">
   <div id="linebottom"></div>
   </div>
-  <script src="../assets/js/main.js"></script>
+  <script src="../public/assets/js/main.js"></script>

@@ -21,6 +21,6 @@
         
     </div>
     <div class="line"></div>
-    <script src="../assets/js/main.js" ></script>
+    <script src="../public/assets/js/main.js" ></script>
  
  
