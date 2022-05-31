@@ -1,61 +1,48 @@
 <?php
 
 use Models\Product;
+use Requests\Request;
+use Router\Router; 
 
-$page = $_REQUEST['page'] ?? 'products';
+$router = new Router(new Request);
+
+
+$router->get('/', function() {
+  $page = 'products';
+  $product = new Product;
+  $products = $product->getAll();
+  include    '../public/pages/layout.php';    
+});
+
+$router->get('/create', function() {
+  $page = 'product_create';
+  include    '../public/pages/layout.php';
+});
+
  
-switch($page)
-{
-  case 'products':
-    $product = new Product;
-       
-    
-    if(($_REQUEST['action'] ?? 0) === 'delete') {
-      
-      $product->delete(json_decode($_POST['product_ids']));
-      }  
+$router->post('/store', function($request) {
+  $page = 'products';
+  $product = new Product;
 
-    $data['products'] = $product->getAll();
-
-     
-
-    break;
-
-  case 'product_create':
-    $product = new Product;
-    
+  $prodInfo = json_decode($_POST['prodInfo']); 
+  $calledFunc = json_decode($_POST['calledFunc']); 
  
-    if(($_REQUEST['action'] ?? 0) === 'create') {
-      
-      
+  $sku=$prodInfo->sku; 
+  $name=$prodInfo->name; 
+  $price=$prodInfo->price; 
+  $properties=$calledFunc->properties; 
+  $productTypeId=(int)$product->selectProdTypeId($calledFunc->type)->id;   
+  $product->store($sku, $name, $price, $properties, $productTypeId);
 
-      $prodInfo = json_decode($_POST['prodInfo']); 
-      $calledFunc = json_decode($_POST['calledFunc']); 
-      
-      $sku=$prodInfo->sku; 
-      $name=$prodInfo->name; 
-      $price=$prodInfo->price; 
-      $properties=$calledFunc->properties; 
-      $productTypeId=(int)$product->selectProdTypeId($calledFunc->type)->id; 
+  $products = $product->getAll();
+  include    '../public/pages/layout.php';  
+});
 
 
-      // $product->store($sku, $name, $price, , $productTypeId);
-      $product->store($sku, $name, $price, $properties, $productTypeId);
-
-      $page ='products';
-      
-    }
-
-    $data['products'] = $product->getAll();
-    
-    
-
-    break;
-
-  default:
-    echo('Page do not exists!');
-     
-    exit;
-}
-
- include('public/pages/layout.php');
+$router->post('/delete', function($request) {
+  $page = 'products';
+  $product = new Product;
+  $product->delete(json_decode($_POST['product_ids']));
+  $products = $product->getAll();
+  include    '../public/pages/layout.php'; 
+});

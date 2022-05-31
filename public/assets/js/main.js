@@ -12,12 +12,12 @@ function massDelete(){
    
   if (product_ids.length > 0) {
     $.ajax({
-      url:"?action=delete",
+      url:"/delete",
       method:"post", 
       data: {product_ids : JSON.stringify(product_ids)},
       success: function(response){
          console.log(response);
-         location.reload(true) ;
+            location.reload(true) ;
       }
     })
   }
@@ -25,11 +25,11 @@ function massDelete(){
 }
 function redirect(){
   $.ajax({
-      url:"?page=product_create",
+      url:"/create",
     method:"get", 
     success: function(response){
           console.log(response);
-           location.href = '?page=product_create';
+           location.href = '/create';
     }
 })
  
@@ -185,7 +185,7 @@ function addProducts() {
   // console.log( JSON.stringify(calledFunc));
 
   $.ajax({
-      url:"./?page=product_create&action=create",
+      url:"/store",
       method:"post", 
       data: {
               prodInfo  : JSON.stringify(prodInfo),
@@ -193,7 +193,7 @@ function addProducts() {
             },
       success: function(response){
             console.log(response);
-              location.href = '?';
+             location.href = '/';
       }
   })
    

@@ -3,7 +3,7 @@
       <h2 id="productaddtext">Product Add</h2>
       <div id="buttons">  
         <button id="save" onclick="checker()">Save</button>
-        <a href="index.php" id="cancel">Cancel</a>
+        <a href="/" id="cancel">Cancel</a>
     </div>
   </div>
 
@@ -92,4 +92,4 @@
   <div class="footer">
   <div id="linebottom"></div>
   </div>
-  <script src="../public/assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
