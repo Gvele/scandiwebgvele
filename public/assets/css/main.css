@@ -265,7 +265,7 @@ body {
 }
 
 
-#addProduct{
+#ADD{
   margin-right: 20px; 
   font-size: 18px;
   /* color: black ;  */
@@ -278,12 +278,12 @@ body {
   cursor: pointer;
 }
 
-#addProduct:hover {
+#ADD:hover {
   background-color: rgb(243,243,243);
   transition: background-color 0.1s;
 }
 
-#addProduct:active{     
+#ADD:active{     
   background-color:rgb(180,180,180);  
 }
 

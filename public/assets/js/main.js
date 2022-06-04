@@ -23,6 +23,7 @@ function massDelete(){
   }
 
 }
+
 function redirect(){
   $.ajax({
       url:"/create",
@@ -180,9 +181,6 @@ function addProducts() {
 
   var objectMethodName = chosenProdId;
   let calledFunc = actions[objectMethodName](); 
- 
-  // console.log( JSON.stringify(prodInfo)); 
-  // console.log( JSON.stringify(calledFunc));
 
   $.ajax({
       url:"/store",

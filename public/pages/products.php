@@ -1,8 +1,9 @@
      <div class="header">
         <h2>Product List</h2> 
         <div class="buttons">  
-            <input type="submit" id="addProduct" value="ADD" onclick="redirect();" />
-            <input type="submit" id="massDelete" value="MASS DELETE" onclick="massDelete();" />  
+            <!-- <button  class="ADD"   onclick="redirect()" >ADD</button> -->
+            <a href="/create"  id="ADD" class="a">ADD</a>
+            <input type="submit" id="massDelete" value="MASS DELETE" onclick="massDelete()" />  
         </div>
     </div>
     <div class="line"></div>
