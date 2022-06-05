@@ -20,7 +20,7 @@
                 <div class="item">
                     <input type="checkbox" id="Product1" class="delete-checkbox" name="products" value="<?php echo $product->getId(); ?>">
                     <p class="prodDescription">
-                    <?php echo  $product->getSku()?><br>
+                    <?php echo $product->getSku()?><br>
                     <?php echo $product->getName()?><br>
                     <?php echo $product->getPrice()?> $<br>
                     <?php echo $product->getSystem()?>: <?php echo $product->getProductValue()?><br>
