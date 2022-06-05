@@ -1,7 +1,6 @@
 <?php
-namespace Requests;
 
-include_once 'IRequest.php';
+namespace Requests;
 
 class Request implements IRequest
 {

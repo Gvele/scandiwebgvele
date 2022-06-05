@@ -27,12 +27,12 @@ $router->post('/store', function($request) {
   $prodInfo = json_decode($_POST['prodInfo']); 
   $calledFunc = json_decode($_POST['calledFunc']); 
  
-  $sku=$prodInfo->sku; 
-  $name=$prodInfo->name; 
-  $price=$prodInfo->price; 
-  $properties=$calledFunc->properties; 
-  $productTypeId=(int)$product->selectProdTypeId($calledFunc->type)->id;   
-  $product->store($sku, $name, $price, $properties, $productTypeId);
+   $product->setSku($prodInfo->sku);
+   $product->setName($prodInfo->name);
+   $product->setPrice($prodInfo->price);
+   $product->setProperties($calledFunc->properties);
+   $product->setProductTypeId((int)$product->selectProdTypeId($calledFunc->type)->id);
+   $product->store($product->getSku(), $product->getName(), $product->getPrice(), $product->getProperties(), $product->getProductTypeId());
 
   $products = $product->getAll();
   include    '../public/pages/layout.php';  

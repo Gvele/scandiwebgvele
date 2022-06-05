@@ -4,7 +4,7 @@ namespace Models;
 
 use Config\Db;
 
-class Product
+class Product extends Main
 {
     use Db;
 
