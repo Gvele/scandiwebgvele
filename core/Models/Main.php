@@ -2,7 +2,7 @@
 
 namespace Models;
 
-class Main {
+trait Main {
 
   protected $id;
   protected $sku;

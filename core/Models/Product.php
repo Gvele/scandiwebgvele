@@ -4,9 +4,10 @@ namespace Models;
 
 use Config\Db;
 
-class Product extends Main
+ abstract class Product   
 {
-    use Db;
+    use Db,Main;
+
 
     public function getAll()
     {
@@ -41,16 +42,6 @@ class Product extends Main
       $stmt->execute($array);
    }
 
-   public function selectProdTypeId($productType)
-   {
-      $sql = 'SELECT pt.id  FROM  product_types AS pt WHERE pt.type = ?';   
-      
-      $stmt = $this->pdo->prepare($sql); 
-      $stmt->execute([$productType]); 
-      $productTypeId = $stmt->fetch();
-  
-    return $productTypeId; 
-
-   }
-
+   abstract public function selectProdTypeId();
+    
 }

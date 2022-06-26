@@ -1,6 +1,9 @@
 <?php
 
-use Models\Product;
+use Models\Service;
+use Models\DVD;
+use Models\Book;
+use Models\Furniture;
 use Requests\Request;
 use Router\Router; 
 
@@ -9,8 +12,8 @@ $router = new Router(new Request);
 
 $router->get('/', function() {
   $page = 'products';
-  $product = new Product;
-  $products = $product->getAll();
+  $service = new Service;
+  $products = $service->getAll();
   include    '../public/pages/layout.php';    
 });
 
@@ -21,28 +24,30 @@ $router->get('/create', function() {
 
  
 $router->post('/store', function($request) {
-  $page = 'products';
-  $product = new Product;
-
-  $prodInfo = json_decode($_POST['prodInfo']); 
-  $calledFunc = json_decode($_POST['calledFunc']); 
+   $page = 'products';
+   $service = new Service;
  
-   $product->setSku($prodInfo->sku);
-   $product->setName($prodInfo->name);
-   $product->setPrice($prodInfo->price);
-   $product->setProperties($calledFunc->properties);
-   $product->setProductTypeId((int)$product->selectProdTypeId($calledFunc->type)->id);
-   $product->store($product->getSku(), $product->getName(), $product->getPrice(), $product->getProperties(), $product->getProductTypeId());
+   $prodInfo = json_decode($_POST['prodInfo']); 
+   $calledFunc = json_decode($_POST['calledFunc']); 
+   $objects =['DVD' => new DVD(), 'Book' => new Book() , 'Furniture' => new Furniture()];
+   $product =  $objects[$calledFunc->type]; 
+  
+   $service->setSku($prodInfo->sku);
+   $service->setName($prodInfo->name);
+   $service->setPrice($prodInfo->price);
+   $service->setProperties($calledFunc->properties);
+   
+   $service->productStore($product);
 
-  $products = $product->getAll();
-  include    '../public/pages/layout.php';  
+   $products = $service->getAll();
+    include    '../public/pages/layout.php';  
 });
 
 
 $router->post('/delete', function($request) {
   $page = 'products';
-  $product = new Product;
-  $product->delete(json_decode($_POST['product_ids']));
-  $products = $product->getAll();
+  $service = new Service;
+  $service->delete(json_decode($_POST['product_ids']));
+  $products = $service->getAll();
   include    '../public/pages/layout.php'; 
 });

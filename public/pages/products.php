@@ -9,21 +9,21 @@
     <div class="line"></div>
     <div class="container">
                 <?php foreach ($products as $item): ?>
-                <?php $product->setId($item->id); 
-                      $product->setSku($item->sku); 
-                      $product->setName($item->name); 
-                      $product->setPrice($item->price);  
-                      $product->setSystem($item->system);
-                      $product->setProductValue($item->value);
+                <?php $service->setId($item->id); 
+                      $service->setSku($item->sku); 
+                      $service->setName($item->name); 
+                      $service->setPrice($item->price);  
+                      $service->setSystem($item->system);
+                      $service->setProductValue($item->value);
                     ?>
                 
                 <div class="item">
-                    <input type="checkbox" id="Product1" class="delete-checkbox" name="products" value="<?php echo $product->getId(); ?>">
+                    <input type="checkbox" id="Product1" class="delete-checkbox" name="products" value="<?php echo $service->getId(); ?>">
                     <p class="prodDescription">
-                    <?php echo $product->getSku()?><br>
-                    <?php echo $product->getName()?><br>
-                    <?php echo $product->getPrice()?> $<br>
-                    <?php echo $product->getSystem()?>: <?php echo $product->getProductValue()?><br>
+                    <?php echo $service->getSku()?><br>
+                    <?php echo $service->getName()?><br>
+                    <?php echo $service->getPrice()?> $<br>
+                    <?php echo $service->getSystem()?>: <?php echo $service->getProductValue()?><br>
                     </p>
                 </div>
 
