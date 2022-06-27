@@ -191,7 +191,7 @@ function addProducts() {
             },
       success: function(response){
             console.log(response);
-              location.href = '/';
+               location.href = '/';
       }
   })
    

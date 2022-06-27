@@ -29,15 +29,15 @@ $router->post('/store', function($request) {
  
    $prodInfo = json_decode($_POST['prodInfo']); 
    $calledFunc = json_decode($_POST['calledFunc']); 
-   $objects =['DVD' => new DVD(), 'Book' => new Book() , 'Furniture' => new Furniture()];
-   $product =  $objects[$calledFunc->type]; 
+  
+   $product = '\Models\\'.$calledFunc->type ; 
   
    $service->setSku($prodInfo->sku);
    $service->setName($prodInfo->name);
    $service->setPrice($prodInfo->price);
    $service->setProperties($calledFunc->properties);
    
-   $service->productStore($product);
+   $service->productStore(new $product());
 
    $products = $service->getAll();
     include    '../public/pages/layout.php';  
